@@ -1,0 +1,7 @@
+services:
+  arbol-familiar:
+    build: .
+    container_name: larra
+    ports:
+      - "127.0.0.1:14250:80"
+    restart: unless-stopped
