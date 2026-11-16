@@ -2,6 +2,15 @@ services:
   arbol-familiar:
     build: .
     container_name: larra
-    ports:
-      - "127.0.0.1:14250:80"
     restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.family.rule=Host(`family.tu-dominio.com`)"
+      - "traefik.http.routers.family.entrypoints=web"
+      - "traefik.http.services.family.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
