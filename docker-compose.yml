@@ -7,7 +7,7 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.family.rule=Host(`family.tu-dominio.com`)"
+      - "traefik.http.routers.family.rule=Host(`larra.lazcano.cloud`)"
       - "traefik.http.routers.family.entrypoints=web"
       - "traefik.http.services.family.loadbalancer.server.port=80"
 
